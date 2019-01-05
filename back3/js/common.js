@@ -1,0 +1,37 @@
+//进度条NProgress
+//进度条有四个使用方法,主要使用开始进度条和结束进度条分别是
+//NProgress.start()
+//NProgress.done();
+//需求:当第一个ajax请求发送时进度条开始
+//当最后一个ajax结束,进度条结束,所以需要ajax事件来监听事件
+$(document).ajaxStart(function(){
+    //第一个ajax开始发送时触发
+    NProgress.start();
+})
+$(document).ajaxStop(function(){
+    NProgress.done();
+})
+
+//首页的左侧导航的分类
+$(".category").click(function(){
+    $('.left_down').stop().slideToggle();
+})
+$('.right_menu').click(function(){
+    $(".lt_left").toggleClass('lf_0');
+    $(".right").toggleClass('pd_0');
+    $('.right_title').toggleClass('pd_0');
+})
+//点击莫泰框中的退出按钮时,会发送ajax请求,退出系统
+$(".btn-primary").click(function(){
+    $.ajax({
+        url:'/employee/employeeLogout',
+        type:'get',
+        dataType:'json',
+        success:function(info){
+            console.log(info);
+            if(info.success){
+                location.href='login.html';
+            }
+        }
+    })
+})

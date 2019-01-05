@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./css/common.css">
+    
+    <title>Page Title</title>
+</head>
+<body>
+      
+    <div class="lt_left ">
+        <div class="left_title">
+            黑马33期牛皮
+        </div>
+        <div class="left_user">
+            <img src="./images/02.jpg" alt="">
+            <p>超级管理员</p>
+        </div>
+        <div class="left_nav">
+            <ul>
+                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                <li class="category">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-list"></i><span>分类管理</span>
+                    </a>
+                    <div class="left_down">
+                        <a href="onecate.html" class="one">一级目录</a>
+                        <a href="twocate.html" class="two current">二级目录</a>
+                    </div>
+                </li>
+                <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="right">
+        <div class="right_title">
+            <a href="#" class="pull-left right_menu"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <a href="#myModal" class="pull-right right_exit" data-toggle="modal" ><i class="glyphicon glyphicon-log-out" ></i></a>
+        </div>
+        <div class="right_main container-fluid">
+            <div class="breadnav">
+             <ol class="breadcrumb">
+                 <li><a href="#">管理系统</a></li>
+                 <li class="active">首页</li>
+             </ol>
+            </div>
+        </div>
+        
+      
+    </div>
+    <!-- 模态框 -->
+    <div class="modal fade bg" id="myModal" tabindex="-1" >
+            <div class="modal-dialog modal-sm" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台系统么?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary">退出</button>
+                </div>
+              </div>
+            </div>
+    </div>
+</body>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./js/islogin.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/common.js"></script>
+</html>

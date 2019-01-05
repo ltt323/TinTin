@@ -99,7 +99,6 @@ a:active,a:link{
   .right{
     padding-left:180px;
     height: 2000px;
-    background-color: pink;
     position: relative;
     transition:all 1s;
   }
@@ -141,11 +140,10 @@ a:active,a:link{
     height: 100%;
     margin-top:20px;
   }
-  .echarts_lf,
-  .echarts_rg{
+  #echarts_lf,
+  #echarts_rg{
     width: 48%;
-    height: 500px;
-    background-color: blue;
+    height: 400px;
   }
 
   

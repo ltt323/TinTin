@@ -9,6 +9,9 @@ a,a:hover,a:visited,
 a:active,a:link{
   text-decoration: none;
 }
+.mt_20{
+  margin-top:20px;
+}
 .current{
   background-color: #1D1F21;
 }
@@ -154,5 +157,8 @@ a:active,a:link{
 .right_main .table>thead>tr>th{
   text-align:center;
   vertical-align: middle;
+}
+.user_form .form-group{
+  margin:15px;
 }
   

@@ -29,9 +29,9 @@
                     <a href="#">
                         <i class="glyphicon glyphicon-list"></i><span>分类管理</span>
                     </a>
-                    <div class="left_down" >
+                    <div class="left_down">
                         <a href="onecate.html" class="one current">一级目录</a>
-                        <a href="twocate.html" class="two">二级目录</a>
+                        <a href="twocate.html" class="two ">二级目录</a>
                     </div>
                 </li>
                 <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
@@ -47,37 +47,72 @@
             <div class="breadnav">
              <ol class="breadcrumb">
                  <li><a href="#">管理系统</a></li>
-                 <li class="active">首页</li>
+                 <li class="active">分类管理</li>
+                 <li class="active">一级分类</li>
              </ol>
+            </div>
+            <div class="right_content">
+                <button class="btn_add btn btn-default">添加分类</button>
+                <table class="table table-bordered table-hover mt_20">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>一级分类名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <!-- 又是一个坑 -->
+                    </tbody>
+                </table>
+                <div class="table-paginator pull-right">
+                    <ul id="paginaor"></ul>
+
+                </div>
             </div>
         </div>
         
       
     </div>
     <!-- 模态框 -->
-    <div class="modal fade bg" id="myModal" tabindex="-1" >
+    <div class="modal fade bg" id="onecateModal" tabindex="-1" >
             <div class="modal-dialog modal-sm" >
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
                   <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
-                <div class="modal-body">
-                <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台系统么?
-                </div>
+                <form class="user_form" id="form">
+                        <div class=" form-group">
+                          <input type="text" class="form-control" name="categoryName" id="exampleInputEmail1" placeholder="请输入一级分类名称">
+                        </div>
+                </form>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                  <button type="button" class="btn btn-primary">退出</button>
+                  <button type="submit" class="btn btn-primary">确认</button>
                 </div>
               </div>
             </div>
     </div>
 </body>
+<script type="text/html" id="onetpl">
+    {{each rows v i}}
+    <tr>
+         <td>{{i+1+(page-1)*5}}</td>
+         <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+
+
+
+</script>
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/islogin.js"></script>
-<script src="./js/login.js"></script>
-<script src="./js/common.js"></script>
+<!-- <script src="./js/login.js"></script> -->
+<!-- <script src="./js/common.js"></script> -->
+<script src="./js/oncecate.js"></script>
 </html>

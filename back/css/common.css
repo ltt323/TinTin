@@ -145,5 +145,14 @@ a:active,a:link{
     width: 48%;
     height: 400px;
   }
-
+/* 用户页面 */
+.right_main .table>tbody>tr>td, 
+.right_main .table>tbody>tr>th, 
+.right_main .table>tfoot>tr>td, 
+.right_main .table>tfoot>tr>th, 
+.right_main .table>thead>tr>td, 
+.right_main .table>thead>tr>th{
+  text-align:center;
+  vertical-align: middle;
+}
   

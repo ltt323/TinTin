@@ -161,4 +161,21 @@ a:active,a:link{
 .user_form .form-group{
   margin:15px;
 }
+.choose_cate{
+  position: relative;
+}
+.chose-name{
+  width: 140px;
+  border:1px solid #ccc;
+  padding-left:15px;
+  display:none;
+  position: absolute;
+  top:46px;
+  left:0;
+  background-color: #fff;
+}
+.chose-name li{
+  width: 100%;
+  line-height:20px;
+}
   

@@ -51,34 +51,103 @@
                  <li class="active">二级分类</li>
              </ol>
             </div>
+            <div class="right_content">
+                <button class="add_btn btn btn-default">添加分类</button>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>一级分类名称</th>
+                            <th>二级分类名称</th>
+                            <th>二级分类LOGO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <!-- 坑 -->
+                    </tbody>
+                </table>
+                <div class="paginator_box pull-right">
+                    <ul id="paginator">
+    
+                    </ul>
+
+                </div>
+            </div>
         </div>
         
       
     </div>
     <!-- 模态框 -->
-    <div class="modal fade bg" id="myModal" tabindex="-1" >
+    <div class="modal fade bg" id="twocateModal" tabindex="-1" >
             <div class="modal-dialog modal-sm" >
-              <div class="modal-content">
-                <div class="modal-header">
+              <div class="modal-content" style="padding:15px">
+                <form  id="form"style="margin:15px 0">
+
+                <div class="form-group modal-header">
                   <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
                   <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
-                <div class="modal-body">
-                <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台系统么?
+                <div class="form-group choose_cate">
+                        <button class="mt_20 chose_first btn btn-default " data-id><span class="header-font ">选择一级分类</span><i class="caret"></i></button>
+                        <input type="hidden" name="categoryId" class="categoryId">
+                        <ul class="chose-name">
+                            <!-- 坑 -->
+                        </ul>
                 </div>
+                 <br>
+                 <div class="form-group">
+                     <input type="text" class="form-control" placeholder="请输入二级分类名称" name="brandName">
+                 </div>
+                 <div class="form-group">
+
+                     <label class="btn btn-default" style="margin:15px 0" for="fileupload">上传图片</label>
+                     <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" style="display:none">
+                 </div>
+                 <div class="form-group">
+                     <img src="./images/none.png" alt="" width="100px" height="100px">
+                     <input type="hidden" name="brandLogo" class="brandlogo">
+
+                 </div>
+                 
+                
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                  <button type="button" class="btn btn-primary">退出</button>
+                  <button type="submit" class="btn btn-primary">确定</button>
                 </div>
-              </div>
+              
+            </form>
+            
+            </div>
             </div>
     </div>
+
+    <!-- 分页插件, bootstrapshi 3.xx版本以上用ul包裹-->
+    
 </body>
+<script type="text/html" id="twoCate-tml">
+    {{each rows v i}}
+    <tr>
+        <td>{{i+1+(page-1)*5}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img src="{{v.brandLogo}}" alt="" height="50px"></td>
+    </tr>
+    {{/each}}
+</script>
+<script type="text/html" id="chosecate-tml">
+    {{each rows v i}}
+    <li class="text-left" data-id="{{v.id}}">{{v.categoryName}}</li>
+    {{/each}}
+</script>
 <script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/islogin.js"></script>
-<script src="./js/login.js"></script>
+<!-- <script src="./js/login.js"></script> -->
 <script src="./js/twocate.js"></script>
 </html>
